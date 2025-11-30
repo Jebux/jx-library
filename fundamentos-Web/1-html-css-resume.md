@@ -1,6 +1,6 @@
 # HTML: HyperText Markaup Language 
 
-![](https://remnote-user-data.s3.amazonaws.com/3OpV88urUOxsHXHL84ulO95Xmo3EOMFgcwWAfbKsdP0XTtDkeAd4yvKg78Gn3YB7XXVEeBVWvKkpouuzDevbRkxpYVex6yRow-q1eXhNCINNpIbeoDyESKCI6-lD0hDj.png)
+![](/img/img-fundamentos-web/estructura-documento-html.png)
 
 ## Etiquetas relevantes
 
@@ -59,6 +59,13 @@
     </dl>
 ```
 
+eg. lista descriptiva
+
+    <dl>
+        <dt>HTML</dt>
+        <dd>Descripción</dd>
+    </dl>
+
 ### 5. Tablas
 
 ```
@@ -112,7 +119,7 @@
 ```
 
 #### Html Semántico
-![](https://remnote-user-data.s3.amazonaws.com/fnlKBfx8YXKJwq98v-ck5CqOd2g0RFS1jyW7ITfC_HUABWRlV6v4Y3Qsc8hqxsZ03wmrQW4INHrEMPTtlEgkZgntYDqNLTu7BJ6IW2hwVUuqCLMXVeLbbXttRwqUtRbo.png)
+![](/img/img-fundamentos-web/html-semantico.png)
 - Usar etiquetas que describen el propósito del contenido en lugar de etiquetas genéricas como "div"
 - Beneficios:
     - Mejora accesibilidad, facilita el SEO y aumenta la legibilidad del código.
@@ -145,6 +152,114 @@ data-id="123"
 
 - [Códigos HTML - Tabla de caracteres y símbolos](https://ascii.cl/es/codigos-html.htm)
 
+# CSS:Cascading Style Sheets
+
+## 1. Conectar CSS
+
+```html 
+    <!-- Archivo externo -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- En el mismo archivo de HTML -->
+    <style>
+        h1 { color: red; }
+    </style>
+
+    <!-- Inline -->
+    <h1 style="color:red;">Hola</h1>
+```
+
+## 2. Selectores básicos
+
+```css 
+    // etiquetas 
+    h1 { }
+    p { }
+
+    // Por clase
+    <style>
+        h1 { color: red; }
+    </style>
+
+    // Por id
+    <h1 style="color:red;">Hola</h1>
+
+    //Selección de hijos
+    div p { }     /* p dentro de div */
+    div > p { }   /* hijo directo */
+
+    //Selección múltiple
+    h1, h2, h3 { color: blue; }
+```
+
+## 3. Propiedades
+
+- Texto
+- Colores
+- Fondos
+- Modelo de caja (Box Model)
+    - Dimensiones
+    - Padding, border, margin
+- Display
+- Flexbox
+- Grid
+- Posicionamiento
+- Bordes y esquinas
+- Sombras
+- Transiciones
+- Tranformaciones
+- Overflow
+- Z-index
+
+## 4. Unidades comunes
+
+```css
+    px      /* píxeles */
+    %       /* porcentaje */
+    em      /* relativo al font-size del elemento */
+    rem     /* relativo al font-size del html */
+    vh      /* 1% del alto del viewport */
+    vw      /* 1% del ancho del viewport */
+
+```
+
+## 5. Media Queries (responsive)
+
+```css
+    @media (max-width: 768px) {
+        body {
+                background: lightblue;
+            }
+    }
+```
+
+## 6. Variables CSS
+
+```css
+    :root {
+        --color-primary: #00bfff;
+    }
+
+    button {
+        color: var(--color-primary);
+    }
+```
+
+## Animaciones
+
+```css
+    @keyframes mover {
+        from { transform: translateX(0); }
+        to   { transform: translateX(100px); }
+    }
+
+    div {
+        animation: mover 2s infinite;
+    }
+
+```
+
+
 ## Ejemplos
 
 ```html 
@@ -171,7 +286,7 @@ data-id="123"
     </h1>
     <div style="height: 155px; width:335px; background-color: black; display:flex; flex-direction: column ;align-items: center; justify-content: center;">
         <h1 style="color:white">Dentro de la caja</h1>
-        <input type="text" placeholder="Digite su nombre" style="width: 150px; margin-bottom: 10px;">
+        <input type="text" placeholder="Digite su nombre" style="background: white; width: 200px; margin-bottom: 10px;">
         <button>Enviar</button>
     </div>
 </div>
